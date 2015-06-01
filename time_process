@@ -1,0 +1,46 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class AverageWaitingTimePrj {
+	public static void print(String str){
+		System.out.println(str);
+	}//end method print
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+			System.out.print("Please input number of Process : " );		
+			int num = in.nextInt();
+			print("-===-===-===-===-===-===-===-===-===-===-");
+			int[] J =  new int[num+1];
+		int i = 1;
+		double TimeProcess = 0 ,TotalWait = 0;
+		while(i<=num){	
+			System.out.print("Burst Time for Process P"+i + " : ");
+			double N = in.nextInt();
+		    String tt = in.nextLine();
+		    J[i] = (int) N;
+			TimeProcess += J[i];
+			TotalWait += TimeProcess-J[i];
+		i++;
+		}//end while
+		// Average Waiting Time แบบ FCFS
+		print("-===-===-===-===-===-===-===-===-===-===-");
+		double AverageWaitingTime = TotalWait/num;
+		print("Total Wait FCFS : " + TotalWait );
+		System.out.printf("Average Waiting Time FCFS : "+"%.3f ", AverageWaitingTime);
+		System.out.println();
+		print("-===-===-===-===-===-===-===-===-===-===-");
+
+		// Average Waiting Time แบบ SJF
+		double TimeProcess1 = 0, TotalWait1 = 0;
+		Arrays.sort(J);
+		for(int k=1; k<J.length; k++) {
+			TimeProcess1 += J[k];
+			TotalWait1 += TimeProcess1;
+		}//end for
+		TotalWait1 = TotalWait1 - TimeProcess1;
+		double AverageWaitingTime1 = TotalWait1/num;
+		print("TotalWait SJF : " + TotalWait1);
+		System.out.printf("Average Waiting Time SJF (Nonpreemtive) : "+"%.3f ",  AverageWaitingTime1);
+		System.out.println();
+		print("-===-===-===-===-===-===-===-===-===-===-");
+	}//end method
+}//end class
