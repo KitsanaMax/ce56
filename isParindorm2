@@ -1,0 +1,53 @@
+
+import java.util.Scanner;
+
+public class jar {
+   public static void main(String[] args) {
+			Scanner in = new Scanner(System.in);
+			System.out.print("Enter Words");
+			while (in.hasNext()){
+				String line = in.nextLine().trim();
+				if(line.length()> 2 && !line.substring(0, 1).equals("#"));
+			        if(isParindorm(line)) System.out.println("Palindrome ");
+			}//end while
+		}//end method			
+   private static boolean isParindorm(String word) {
+	   int i = 0 , j = word.length() -1;
+	   //System.out.println(word.length());
+	   for(i = 0 , j = word.length()-1;i < j ;i++,j--){
+	   		if(!word.substring(i, i+1).equalsIgnoreCase(word.substring(j ,j+1))){
+	   			System.out.println("No");
+	   			return false;
+	   		}//end if
+	   }//end for
+	   int m = 0 , n = word.length()/2;
+	   if(word.length()%2 == 0){	   
+		   for(m = 0 , n = (word.length()/2);n <= word.length()/2 ;m++,n++){
+	   			if(!word.substring(m, m+1).equalsIgnoreCase(word.substring(n ,n+1))){
+	   				return true;
+	   			}else{
+	   				System.out.println("Double Palindrome");
+	   				return false;
+	   			}//end if
+		   }//end for
+	   }//end if
+	   int d = 0 , f = (word.length()/2)+1;
+	   if(word.length()%2 != 0){
+		   for(d = 0 , f = (word.length()/2)+1;f < word.length() ;d++,f++){
+   				if(!word.substring(d, d+1).equalsIgnoreCase(word.substring(f ,f+1))){
+   					return true;
+   				}else{
+   					System.out.println("Double Palindrome");
+   					return false; 
+   				}//end if
+		   }//end for 
+	   }//end if
+	   if(word.length()==1){
+		   System.out.println("Palindrome");
+		   return false;
+	   }//end if
+	   return true;
+   }//end method
+}//end class
+
+	   
