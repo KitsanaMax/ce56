@@ -1,0 +1,40 @@
+
+import java.util.Scanner;
+
+public class pPRj {
+   public static void main(String[] args) {
+			Scanner in = new Scanner(System.in);
+			System.out.println("Enter Words");
+			while (in.hasNext()){
+				String line = in.nextLine().trim();
+				if(line.length()> 2 && !line.substring(0, 1).equals("#"));
+			        if(isParindorm(line)) System.out.println("Palindrome ");
+			}//end while		
+		}//end method			
+   private static boolean isParindorm(String word) {
+	   int i = 0 , j = word.length() -1;
+	   //System.out.println(word.length());
+	   for(i = 0 , j = word.length()-1;i < j ;i++,j--){
+	   		if(!word.substring(i, i+1).equalsIgnoreCase(word.substring(j ,j+1))){
+	   			System.out.println("No");
+	   			return false;
+	   		}//end if
+	   }//end for
+	   if(word.length() == 1){
+		   System.out.println("Palindrome ");return false;
+	   }//end if
+	   String Word1 = word.substring(0, (word.length()/2));
+	   String Word2 = word.substring((word.length()/2), word.length());
+	   String Word3 = word.substring(0, (word.length()/2));
+	   String Word4 = word.substring((word.length()/2+1), word.length());	   
+	   if(Word1.equalsIgnoreCase(Word2)){
+		   System.out.println("Double Palindrome ");return false;
+	   }//end if
+	   if(Word3.equalsIgnoreCase(Word4)){
+		   System.out.println("Double Palindrome ");return false;
+	   }//end if	   
+	   else return true;
+   }//end method
+}//end class
+
+	   
