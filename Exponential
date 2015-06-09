@@ -1,0 +1,28 @@
+
+import java.util.Scanner;
+
+public class Exponential {
+	
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		for(int i = 1;i > 0; i++){
+			System.out.print("จากสมการ e^n ให้ป้อนค่า n ที่ต้องการหาค่า : ");
+			System.out.printf("ผลลัพธ์ที่ได้  : "+"%.5f ",factorial(in.nextInt()));
+			System.out.println();
+		}//end for
+	}//end method
+	
+	public static double factorial(double N){
+		
+		double e = 2.718281828;
+		if(N==0)return 1;//best cast
+		
+		else{ 
+			System.out.println(factorial(N-1));
+			return e*factorial(N-1);// General cast
+		}
+		
+	
+	}//end method
+}//end class
