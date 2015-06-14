@@ -1,0 +1,77 @@
+package จำนวนเฉพาะ;
+import java.util.Scanner;
+public class สูตรพื้นฐานการเคลื่อนที่ {
+	public static void println(String str){
+		System.out.println(str);
+	}//end method
+	public static void print(String str){
+		System.out.print(str);
+	}//end method
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		for(int i = 1 ; i > 0;i++){
+		println("ป้อน 1 เพื่อหาค่าจากสมการ V = u + at");
+		println("ป้อน 2 เพื่อหาค่าจากสมการ S = ((u + v)/2)*t");
+		println("ป้อน 3 เพื่อหาค่าจากสมการ S = ut + (1/2)(at)^2");
+		println("ป้อน 4 เพื่อหาค่าจากสมการ V^2 = u^2 + 2as \n");
+		print("ป้อนตัวเลือก 1-4 : ");
+		int value = in.nextInt();
+		int u = 0,a=0,v= 0 ,t = 0,S=0,V=0,s=0 ;
+		switch (value) {
+		case 1:
+			print("จากสมการ V = u + at \n");
+			print("ป้อนค่า u :");
+			u = in.nextInt();
+			print("ป้อนค่า a :");
+			a = in.nextInt();
+			print("ป้อนค่า t :");
+			t = in.nextInt();
+			V = u+(a*t);
+			println("ค่าความเร็วที่ได้มีค่าเท่ากับ : "+V);
+			break;
+		
+		case 2:
+			print("จากสมการ S = ((u + v)/2)*t \n");
+			print("ป้อนค่า u :");
+			u = in.nextInt();
+			print("ป้อนค่า v :");
+			v = in.nextInt();
+			print("ป้อนค่า t :");
+			t = in.nextInt();
+			S = ((u + v)/2)*t;
+			println("ระยะทางที่คำนวณได้มีค่าเท่ากับ : "+S);
+			break;
+		
+		case 3:
+			print("จากสมการ S = ut + (1/2)(at)^2 \n");
+			print("ป้อนค่า u :");
+			u = in.nextInt();
+			print("ป้อนค่า t :");
+			t = in.nextInt();
+			print("ป้อนค่า a :");
+			a = in.nextInt();
+			S = (u*t) + (1/2)*((a*t)*(a*t));
+			println("ระยะทางที่คำนวณได้มีค่าเท่ากับ : "+S);
+			break;
+			
+		case 4:
+			print("จากสมการ V^2 = u^2 + 2as \n");
+			print("ป้อนค่า u :");
+			u = in.nextInt();
+			print("ป้อนค่า a :");
+			a = in.nextInt();
+			print("ป้อนค่า s :");
+			s = in.nextInt();
+			V = (u*u) + (2*a*s);
+			println("ค่าความเร็ว V^2 ที่ได้มีค่าเท่ากับ : "+V);
+			break;
+		
+		default:
+			println("ป้อนข้อมูลไม่ถูกต้อง");
+			break;
+		}//end switch
+		println("\nจบการทำงานของโปรแกรมครั้งที่ "+i +"\n");
+		print("---------------------------------------------------\n");
+	}//end for
+	}//end method
+}//end class
