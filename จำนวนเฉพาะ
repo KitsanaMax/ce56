@@ -1,0 +1,17 @@
+package จำนวนเฉพาะ;
+import java.util.Scanner;
+public class Mat {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int[] num = new int[100];
+		for(int i= 0 ; i < num.length;i++){
+			num[i] = in.nextInt();
+			if(num[i]%2 != 0 && num[i]%3 != 0 && num[i]%5!=0){
+				System.out.println("ตำแหน่งที่ "+i +" มีค่าเท่ากับ : "+num[i] + " ซึ่งเป็นจำนวนเฉพาะ" );
+			}else if(num[i]==2 || num[i]==3 || num[i]== 5){
+				System.out.println("ตำแหน่งที่ "+i +" มีค่าเท่ากับ : "+num[i] + " ซึ่งเป็นจำนวนเฉพาะ" );
+			}//end else if
+		}//end for
+	}//end method
+}//end class
