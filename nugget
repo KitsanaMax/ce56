@@ -1,0 +1,145 @@
+import java.util.Scanner;
+
+public class nugget {
+	public static void print(String str){
+		System.out.println(str);
+	}//end method print
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		for(int v = 1 ; v >= 0 ; v++){
+		print("");
+		System.out.print("Nugget Of Number : ");
+		int value = in.nextInt();
+		int c1 = 1 , c2 = 1 , c3 = 1;
+		int num1 = value%6 , num2 = value%9 , num3 = value%20;
+		
+		if(value > 100 || value < 6){
+			System.out.println("no");
+		}//end if
+		if(num1 == 0 && value >= 6 && value <= 100){
+			int s = 6;
+			for(int i = 0 ; i < c1 ; i++){
+				if(s == value){
+					print("");
+					for(int j = 0 ; j < c1 ; j++){
+						System.out.print(6+" ");
+					}//end for
+				}else {s = s + 6; c1++;}
+			}//end for
+			print("");
+		}//end if
+		
+		if(num2 == 0 && value >= 9 && value <= 100){
+			int m = 9;
+			for(int i = 0 ; i < c2 ; i++){
+				if(m == value){
+					print("");
+					for(int j = 0 ; j < c2 ; j++){
+						System.out.print(9+" ");
+					}//end for
+				}else {m = m + 9; c2++;}
+			}//end for
+			print("");
+		}//end if
+		
+		if(num3 == 0 && value >= 20 && value <= 100){
+			int h = 20;
+			for(int i = 0 ; i < c3 ; i++){
+				if(h == value){
+					print("");
+					for(int j = 0 ; j < c3 ; j++){
+						System.out.print(20+" ");
+					}//end for
+				}else {h = h + 20; c3++;}
+			}//end for
+			print("");
+		}//end if
+		
+		int a1 = 1, a2 = 1,aa = 0;
+		for(int i = 6; i < 100 ; i = i + 6,a1++){
+			for(int j = 9; j < 100 ; j = j + 9,a2++){
+				aa = i+j;
+				if(aa == value){
+					print("");
+				    i = i/6;j=j/9;
+					for(int l = 0;l<i;l++){
+						System.out.print(6+" ");
+					}//end for
+					for(int l = 0;l<j;l++){
+						System.out.print(9+" ");
+					}//end for
+					print("");
+					if(aa == value)break;
+				}//end if
+			}//end for
+			if(aa == value)break;
+		}//end for
+		
+		int q1 = 1, q2 = 1,qq = 0;
+		for(int i = 6; i < 100 ; i = i + 6,q1++){
+			for(int j = 20; j < 100 ; j = j + 20,q2++){
+				qq = i+j;
+				if(qq == value){
+					print("");
+				    i = i/6;j=j/20;
+					for(int l = 0;l<i;l++){
+						System.out.print(6+" ");
+					}//end for
+					for(int l = 0;l<j;l++){
+						System.out.print(20+" ");
+					}//end for
+					print("");
+					if(qq == value)break;
+				}//end if
+			}//end for
+			if(qq == value)break;
+		}//end for
+		
+		int j1 = 1, j2 = 1,jj = 0;
+		for(int i = 9; i < 100 ; i = i + 9,j1++){
+			for(int j = 20; j < 100 ; j = j + 20,j2++){
+				jj = i+j;
+				if(jj == value){
+					print("");
+				    i = i/9;j=j/20;
+					for(int l = 0 ; l < i ; l++){
+						System.out.print(9+" ");
+					}//end for
+					for(int l = 0;l<j;l++){
+						System.out.print(20+" ");
+					}//end for
+					print("");
+					if(jj == value)break;
+				}//end if
+			}//end for
+			if(jj == value)break;
+		}//end for
+		
+		int t1 = 1 , t2 = 1 , t3 = 1 , tt = 0;
+		for(int i = 6; i < 100 ; i = i + 6,t1++){
+			for(int j = 9; j < 100 ; j = j + 9,t2++){
+				for(int k = 20; k <= 100 ; k = k + 20,t3++){
+					tt = i+j+k;
+					if(tt == value){
+						print("");
+					    i = i/6;j=j/9;k=k/20;
+						for(int l = 0;l<i;l++){
+							System.out.print(6+" ");
+						}//end for
+						for(int l = 0;l<j;l++){
+							System.out.print(9+" ");
+						}//end for
+						for(int l = 0;l<k;l++){
+							System.out.print(20+" ");
+						}//end for
+						print("");
+					if(tt == value)break;
+					}//end if
+				}//end for
+				if(tt == value)break;
+			}//end for
+			if(tt == value)break;
+		}//end for
+		}//end if		
+	}//end method
+}//end class
