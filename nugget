@@ -80,7 +80,7 @@ public class nugget {
 			for(int j = 20; j < 100 ; j = j + 20,q2++){
 				qq = i+j;
 				if(qq == value){
-					print("");
+				    print("");
 				    i = i/6;j=j/20;
 					for(int l = 0;l<i;l++){
 						System.out.print(6+" ");
@@ -140,6 +140,6 @@ public class nugget {
 			}//end for
 			if(tt == value)break;
 		}//end for
-		}//end if		
+		}//end for		
 	}//end method
 }//end class
