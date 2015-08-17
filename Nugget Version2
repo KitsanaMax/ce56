@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Nugget1 {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		for(int v = 1 ; v >= 0 ; v++){
+		System.out.println();
+		System.out.print("Nugget Of Number : ");
+		int value = in.nextInt();
+		if(value > 0 && value <=100){
+		int tt = 0,ii = 0 , jj = 0 , kk = 0, u = 1;
+		for(int i = 0 ; i <= 100 ; i = i + 20 ){
+			for(int j = 0 ; j <= 100 ; j = j + 9 ){
+				for(int k = 0 ; k <= 100 ; k = k +6 ){
+					tt = i + j + k;
+					if(i+j+k == value){
+						ii = i/20; jj=j/9; kk=k/6;
+						System.out.println();
+						for(int l = 0;l<kk;l++){
+							System.out.print(6+" ");
+						}//end for
+						for(int l = 0;l<jj;l++){
+							System.out.print(9+" ");
+						}//end for
+						for(int l = 0;l<ii;l++){
+							System.out.print(20+" ");
+						}//end for
+						System.out.println();
+					}//end if
+					if(i+j+k == value)break;					
+				}//end for
+				if(i+j == value)break;
+			}//end for
+			if(i == value)break;
+		}//end for
+		while(u > 0 && u <= 1){
+			if(ii*20 + jj * 9 + kk *6 != value )System.err.println("no");
+			u--; break;
+		}//end while
+		}else System.err.println("คุณไม่ได้ป้อนค่าอยู่ในช่วงที่กำหนด ป้อนค่าใหม่ !!!");
+		}//end for new loop
+	}//end method
+}//end class
