@@ -1,0 +1,70 @@
+
+import java.util.Arrays;
+import java.util.Scanner;
+public class Ptice {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.print("ป้อนจำนวนคำถามในข้อสอบ : ");
+		char [] Cr = new char[in.nextInt()];
+		if(Cr.length > 0 && Cr.length <= 100){
+		System.out.println("ป้อนเฉลยของคำถามในแต่ละข้อ : ");
+		String word = in.next();
+		for(int i = 0;i < word.length();i++){
+			Cr[i] = word.charAt(i);
+		}//end for
+		char [] Adrian = {'A','B','C'};
+		char [] Bruno = {'B','A','B','C'}; 
+		char [] Goran = {'C','C','A','A','B','B'};
+		int count0 = 0;
+		for(int i = 0 , j = 0 ; i < Cr.length ; i++ , j++){
+			if(j>2){
+				j = 0;
+				if(Adrian[j] == Cr[i]){
+					count0++;
+				}//end if
+			}else if(j <=2){
+				if(Adrian[j] == Cr[i]){
+					count0++;
+				}//end if
+			}//end else if
+		}//end for		
+		int count1 = 0;
+		for(int i = 0 , j = 0 ; i < Cr.length; i++ , j++){
+			if(j>3){
+				j = 0;
+				if(Bruno[j] == Cr[i]){
+					count1++;
+				}//end if
+			}else if(j <=3){
+				if(Bruno[j] == Cr[i]){
+					count1++;
+				}//end if
+			}//end else if
+		}//end for		
+		int count2 = 0;
+		for(int i = 0 , j = 0 ; i < Cr.length; i++ , j++){
+			if(j>5){
+				j = 0;
+				if(Goran[j] == Cr[i]){
+					count2++;
+				}//end if
+			}else if(j <=5){
+				if(Goran[j] == Cr[i]){
+					count2++;
+				}//end if
+			}//end else if
+		}//end for
+		
+		if(count0 >= count1 && count0 >= count2){
+			System.out.println("Adrian คะแนนที่ได้ : "+count0);
+		}//end if
+		if(count1 >= count0 && count1 >= count2){
+			System.out.println("Bruno คะแนนที่ได้ : "+count1);
+		}//end if
+		if(count2 >= count0 && count2 >= count1){
+			System.out.println("Goran คะแนนที่ได้ : "+count2);
+		}//end if		
+		}else System.err.println("กรุณาป้อนจำนวนข้อสอบใหม่ !!!");
+		
+	}//end method
+}//end class
