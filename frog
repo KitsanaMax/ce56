@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class frog {
+    public static void print(int str){
+    	System.out.println(str);
+    }//end method print
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		for(int i = 1 ; i > 0 ; i++ ){
+		System.out.println("คำนวณหาจำนวนครั้งที่น้อยที่สุดที่เจ้ากบต้องกระโดด");
+		System.out.print("ป้อนค่า x : ");
+		int x = in.nextInt();
+		System.out.print("ป้อนค่า y : ");
+		int y = in.nextInt();
+		if(x >= 1 && x <= 1000 && y >= 1 && y <= 1000){
+			if(x > y){
+				if(x % y == 0){
+					print(x/y);
+				}else System.out.println(x/y+1);					
+			}//end if
+			else if( x == y ) print(0);
+			else if(y % x == 0)print(y/x); 
+			else print(y/x+1);
+		}//end if
+	}//end for
+	}//end method
+}//end class
