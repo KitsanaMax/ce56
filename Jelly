@@ -1,0 +1,39 @@
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+public class Jelly {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int[] Arr = new int[3];
+		for(int j = 1 ; j > 0 ; j++){
+		System.out.println();
+		System.out.println("ป้อนค่า A,B,C ");
+		for(int i = 0 ; i <= 2 ; i++ ){
+			Arr[i] = in.nextInt();
+		}//end for
+		if((Arr[0]>=1 && Arr[0] <= 1000000) && 
+		   (Arr[1]>=1 && Arr[1] <= 1000000) &&
+		   (Arr[2]>=1 && Arr[2] <= 1000000)){
+			System.out.println();
+		int count = 0;
+		Arrays.sort(Arr);
+	    while(!(Arr[2]<1)){
+	    	if(Arr[2]<Arr[1]||Arr[2]<Arr[0]){
+	        	Arrays.sort(Arr);
+	        }else {
+	        	if(Arr[2] % 2 != 0)	Arr[2] = Arr[2]-1;
+	    		else{
+	    			Arr[2] = Arr[2]/2;
+	    			//System.out.println(Arr[2]);
+	    			count++;
+	    	    }//end else if
+	        }//end else
+	    }//end while
+	    Arr[2] = 1;
+		System.out.println(count);
+		}else System.err.print("ป้อนค่าใหม่ !!");
+	}//end for
+	}//end method
+}//end class
