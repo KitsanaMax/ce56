@@ -1,0 +1,55 @@
+package ce56;
+import java.util.Scanner;
+public class dec {
+
+	public static void main(String[] args) {
+		Scanner in  = new Scanner(System.in);
+		System.out.print("ป้อนจำนวนชุดข้อมูล : ");
+		int t_r = in.nextInt();
+		for(int f = 0; f < t_r;f++){
+			System.out.print("ป้อนจำนวน  Matrix : ");
+		int n = in.nextInt();
+		//ประกาศ array
+		int arr[][] = new int[n][n];
+		//รับค่าจากแป้นพิมพ์เก็บไว้ใน  Array
+		for(int i = 0 ; i < arr.length ; i++){
+			for(int j = 0 ; j < arr.length ; j++){
+				arr[i][j] = in.nextInt();
+			}//end for
+		}//end for
+		
+		//ตรวจสอบเงื่อนไขและ count 
+		int count  =  0,sum = 0 ,point = -1;
+		for(int i = 0 ; i < arr.length ; i++){
+			for(int j = 0 ; j < arr.length ; j++){
+				sum +=  arr[i][j];
+				if(sum == 10){
+					sum = 0 ; count++;
+					point++; j = point;
+				}else if(sum > 10){
+					point++; j = point; sum = 0;
+				}//end else if
+				if(j == arr.length-1){point = -1;sum = 0;};
+			}//end for
+		}//end for
+		
+		//ตรวจสอบเงื่อนไขและ count		
+		sum = 0;point = 0;
+		for(int i = 0 ; i < arr.length ; i++){
+			for(int j = 0 ; j < arr.length ; j++){
+				sum += arr[j][i];
+				if(sum == 10){
+					sum = 0 ; count++;
+					point++; j = point;
+				}else if(sum > 10){
+					point++; j = point;sum = 0;
+				}//end else if
+				if(j == arr.length-1){point = -1;sum = 0;};				
+			}//end for
+		}//end for
+		System.out.print("count : "+count+"\n");
+		//ใช้ ตัวชี้ตำแหน่ง 3  ตัว i,j และ  point  
+		}//end for
+	}//end method
+
+}//end class
