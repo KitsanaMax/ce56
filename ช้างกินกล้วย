@@ -1,0 +1,40 @@
+package ce56;
+import java.util.Scanner;
+public class sum {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		for(int S = 1; S > 0; S++){
+		System.out.print("\nNum Of Data : ");
+		int n = in.nextInt();
+		int arr[] = new int[n],path[] = new int[n];
+		//รับค่าเข้าไปเก็บใน  arrays
+		System.out.print("Data : ");
+		for(int i = 0;i <arr.length;i++){
+			arr[i] = in.nextInt();
+			path[i] = arr[i];
+		}//end for
+		int sum0 = 0 , sum1 = 0 ;
+		int i = 0 ,j = 3;
+		path[2] += path[0];
+		while(j < arr.length){			
+			sum0 = path[i+1] + path[j];
+			sum1 = path[i] + path[j];
+			
+			if(sum0 >= sum1)
+			path[j] = sum0;
+			else path[j] = sum1;
+			j++;i++;
+			
+		}//end for
+		
+		int max = path[0];
+		for(int p = 0 ; p < path.length ; p++){
+			if(max < path[p]) max = path[p];
+		}//end for
+		System.out.print("จำนวนกล้วยที่กินได้มากที่สด : "+max);
+		System.out.println();
+		}//end for loop
+	}//end method
+
+}//end class
