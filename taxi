@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+
+public class ce56 {
+
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		System.out.print("Distance : ");
+		int S = in.nextInt(); //รับจำนวนระยะทาง
+		float Fare = 0;
+		int item = S-1;
+		
+		if(S == 1){
+			Fare = 35;
+		}else if(S  > 1 && S <= 10){
+			Fare = (float) (35+(item*5.50));
+		}else if(S > 10 && S <= 20){
+			Fare = (float) (35+(item*6.50));
+		}else if(S > 20 && S <= 40){
+			Fare = (float) (35+(item*7.50));
+		}else if(S > 40 && S <= 60){
+			Fare = (float) (35+(item*8.00));
+		}else if(S > 60 && S <= 80){
+			Fare = (float) (35+(item*9.00));
+		}else if(S > 80){
+			Fare = (float) (35+(item*10.50));
+		}//end if
+		System.out.printf("Fare : "+"%.2f",Fare);
+	
+	}//end method
+	
+}//end class
