@@ -7,7 +7,7 @@ public class mat {
 		for(int i = 2 ; i <= 24 ; i++){
 			for(int j = 1 ; j <= 12 ; j++){
 				int sum = i*j;
-				System.out.println(i+"*"+j+"= "+sum);
+				System.out.println(i+"*"+j+" = "+sum);
 			}//end for j
 			System.out.println();
 		}//end for i
