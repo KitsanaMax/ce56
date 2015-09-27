@@ -1,0 +1,35 @@
+
+import java.util.Scanner;
+
+public class ce_56 {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.print("Promotion : ");
+		String At = in.next();
+		if(At.equals("A") || At.equals("a") || At.equals("B") || At.equals("b")){
+			
+			System.out.print("Minute Use : ");
+			int Minute = in.nextInt();
+			int Service;
+			
+				if(At.equals("A")|| At.equals("a")){
+					Service = 150 + (Minute*5);
+					System.out.println("ค่าบริการ : "+Service);
+					
+				}else if(At.equals("B") || At.equals("b")){
+					Service = 150 + (Minute*3);
+					System.out.println("ค่าบริการ : "+Service);
+					
+				}//end if
+				
+		}else{
+			
+			System.err.println("เลือกโปรโมรชันไม่ถูกต้อง!!! Run Program new");
+			System.exit(0);
+			
+		}//end else
+		
+	}//end method
+
+}//end class
